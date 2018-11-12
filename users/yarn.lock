@@ -42,6 +42,7 @@ array-flatten@1.1.1:
   resolved "https://registry.yarnpkg.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
   integrity sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
 
+<<<<<<< Updated upstream
 asn1@~0.2.3:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.4.tgz#8d2475dfab553bb33e77b54e59e880bb8ce23136"
@@ -118,6 +119,14 @@ builtin-modules@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/builtin-modules/-/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f"
   integrity sha1-Jw8HbFpywC9bZaR9+Uxf46J4iS8=
+=======
+axios@0.15.3:
+  version "0.15.3"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.15.3.tgz#2c9d638b2e191a08ea1d6cc988eadd6ba5bdc053"
+  integrity sha1-LJ1jiy4ZGgjqHWzJiOrda6W9wFM=
+  dependencies:
+    follow-redirects "1.0.0"
+>>>>>>> Stashed changes
 
 bytes@3.0.0:
   version "3.0.0"
@@ -246,6 +255,7 @@ cookie@0.3.1:
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
   integrity sha1-5+Ch+e9DtMi6klxcWpboBtFoc7s=
 
+<<<<<<< Updated upstream
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -274,6 +284,9 @@ dashdash@^1.12.0:
     assert-plus "^1.0.0"
 
 debug@2.6.9:
+=======
+debug@^2.2.0:
+>>>>>>> Stashed changes
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   integrity sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
@@ -498,6 +511,7 @@ finalhandler@0.5.0:
     statuses "~1.3.0"
     unpipe "~1.0.0"
 
+<<<<<<< Updated upstream
 finalhandler@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-1.1.1.tgz#eebf4ed840079c83f4249038c9d703008301b105"
@@ -534,6 +548,16 @@ form-data@~2.3.2:
     mime-types "^2.1.12"
 
 forwarded@~0.1.0, forwarded@~0.1.2:
+=======
+follow-redirects@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.0.0.tgz#8e34298cbd2e176f254effec75a1c78cc849fd37"
+  integrity sha1-jjQpjL0uF28lTv/sdaHHjMhJ/Tc=
+  dependencies:
+    debug "^2.2.0"
+
+forwarded@~0.1.0:
+>>>>>>> Stashed changes
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
   integrity sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ=
@@ -984,11 +1008,14 @@ ms@2.0.0:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
   integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
 
+<<<<<<< Updated upstream
 nanoid@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.0.0.tgz#e1ab4a4b024a38d15531ba34a712a201540de639"
   integrity sha512-SG2qscLE3iM4C0CNzGrsAojJHSVHMS1J8NnvJ31P1lH8P0hGHOiafmniNJz6w6q7vuoDlV7RdySlJgtqkFEVtQ==
 
+=======
+>>>>>>> Stashed changes
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
