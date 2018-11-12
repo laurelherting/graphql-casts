@@ -8,21 +8,21 @@ const {
 } = graphql;
 
 const users = [
-  { id: '33', fistName: 'Jill', age: '30' },
-  { id: '43', fistName: 'Brad', age: '34' },
+  { id: '33', firstName: 'Jill', age: '30' },
+  { id: '43', firstName: 'Brad', age: '34' },
 ];
 
 const UserType = new GraphQLObjectType({
   name: 'User',
   fields: {
-    id: { type: GraphQLString } ,
+    id: { type: GraphQLString },
     firstName: { type: GraphQLString },
     age: { type: GraphQLInt }
   }
 });
 
 const RootQuery = new GraphQLObjectType({
-  name: 'RootQueryType' ,
+  name: 'RootQueryType',
   fields: {
     user: {
       type: UserType,
