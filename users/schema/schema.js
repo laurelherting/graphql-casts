@@ -19,7 +19,7 @@ const CompanyType = new GraphQLObjectType({
       type: new GraphQLList(UserType),
       resolve(parentValue, args) {
         return axios.get(`http://localhost:3000/companies/${parentValue.id}/users`)
-          .then(res => res.data);
+          .then(res => res.data)
       }
     }
   })
@@ -49,7 +49,7 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLString } },
       resolve(parentValue, args) {
         return axios.get(`http://localhost:3000/users/${args.id}`)
-        .then(resp => resp.data);
+          .then(resp => resp.data);
       }
     },
     company: {
@@ -70,11 +70,11 @@ const mutation = new GraphQLObjectType({
       type: UserType,
       args: {
         firstName: { type: new GraphQLNonNull(GraphQLString) },
-        age: { type: new GraphQLNonNull(GraphQLInt) },
+        age: { type: GraphQLInt },
         companyId: { type: GraphQLString }
       },
-      resolve(parentValue, { firstName, age }) {
-        return axios.post('http://localhost:3000/users', { firstName, age })
+      resolve(parentValue, { firstName, age, companyId }) {
+        return axios.post('http://localhost:3000/users', { firstName, age, companyId })
           .then(res => res.data);
       }
     },
@@ -92,6 +92,6 @@ const mutation = new GraphQLObjectType({
 });
 
 module.exports = new GraphQLSchema({
-  query: RootQuery,
-  mutation
+  mutation,
+  query: RootQuery
 });
