@@ -19,7 +19,7 @@ Requires the [Node.js V8 inspector extension](https://chrome.google.com/webstore
 
 To debug the server enter a `debugging` line in the server codebase.
 
-Example: `./server/schema/schema.js`
+Example: `./users/schema/schema.js`
 ```javascript
 resolve(parent, args) {
   debugger;
@@ -32,5 +32,8 @@ inspector (dev tools). Click the green Node.js V8 inspector extension icon. Use
 breakpoints as necessary to move through the code and inspect.
 
 ## Express-GraphQL Notes
-The GraphQL schema docs are located in: `server/models`
+The GraphQL schema docs are located in: `users/schema`
+
+### Node
+.nvmrc added to both Server and Client side for node version consistency
 
