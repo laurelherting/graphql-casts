@@ -1,31 +1,35 @@
 const mongoose = require('mongoose');
 const graphql = require('graphql');
-const {
-  GraphQLObjectType,
-  GraphQLList,
-  GraphQLID,
-  GraphQLInt,
-  GraphQLString
-} = graphql;
+const { GraphQLObjectType, GraphQLList, GraphQLID, GraphQLNonNull } = graphql;
+const SongType = require('./song_type');
+const LyricType = require('./lyric_type');
 const Lyric = mongoose.model('lyric');
+const Song = mongoose.model('song');
 
-const LyricType = new GraphQLObjectType({
-  name:  'LyricType',
+const RootQuery = new GraphQLObjectType({
+  name: 'RootQueryType',
   fields: () => ({
-    id: { type: GraphQLID },
-    likes: { type: GraphQLInt },
-    content: { type: GraphQLString },
+    songs: {
+      type: new GraphQLList(SongType),
+      resolve() {
+        return Song.find({});
+      }
+    },
     song: {
-      type: require('./song_type'),
-      resolve(parentValue) {
-        return Lyric.findById(parentValue).populate('song')
-          .then(lyric => {
-            console.log(lyric)
-            return lyric.song
-          });
+      type: SongType,
+      args: { id: { type: new GraphQLNonNull(GraphQLID) } },
+      resolve(parentValue, { id }) {
+        return Song.findById(id);
+      }
+    },
+    lyric: {
+      type: LyricType,
+      args: { id: { type: new GraphQLNonNull(GraphQLID) } },
+      resolve(parnetValue, { id }) {
+        return Lyric.findById(id);
       }
     }
   })
 });
 
-module.exports = LyricType;
+module.exports = RootQuery;
