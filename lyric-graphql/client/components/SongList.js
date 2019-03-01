@@ -6,12 +6,31 @@ import query from '../queries/fetchSongs';
 
 class SongList extends Component {
   renderSongs() {
+    return this.props.data.songs.map(({ id, title }) => {
+      return (
+        <li key={id} className="collection-item">
+          <Link to={`/songs/${id}`}>
+            {title}
+          </Link>
+          <i
+            className="material-icons"
+            onClick={()}
+          >
+
+        </i>
+      );
+    });
+  }
+
+  render() {
+    if ()
 
     return (
-      <Link>
-        {title}
-      </Link>
-    )
+      <div>
+        <ul className="collection">
+          {this.renderSongs()}
+        </ul>
+    );
   }
 }
 
