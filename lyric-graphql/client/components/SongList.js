@@ -5,6 +5,11 @@ import { Link } from 'react-router';
 import query from '../queries/fetchSongs';
 
 class SongList extends Component {
+  onSongDelete(id) {
+    this.props.mutate({ variables: { id } })
+      .then(() => this.props.data.refetch());
+  }
+
   renderSongs() {
     return this.props.data.songs.map(({ id, title }) => {
       return (
@@ -14,26 +19,33 @@ class SongList extends Component {
           </Link>
           <i
             className="material-icons"
-            onClick={()}
+            onClick={() => this.onSongDelete(id)}
           >
-
-        </i>
+            delete
+          </i>
+        </li>
       );
     });
   }
 
   render() {
-    if ()
+    if (this.props.data.loading) { return <div>Loading...</div>; }
 
     return (
       <div>
         <ul className="collection">
           {this.renderSongs()}
         </ul>
+        <Link
+          to="/songs/new"
+          className="btn-floating btn-large red right"
+        >
+          <i className="material-icons">add</i>
+        </Link>
+      </div>
     );
   }
 }
-
 export default graphql(
   graphql(query)(SongList)
 );
